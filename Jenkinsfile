@@ -46,6 +46,7 @@ pipeline{
                 }
             }
             stage('Deploy to prod'){
+                when {branch "main" }
                 steps{
                     sh """
                     oc set image deployment home-automation \
